@@ -854,11 +854,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SR185378\\source\\repos\\EmployeeAss\\EmployeeAss\\EmployeeAss.csproj",
+      "projectUniqueName": "C:\\Users\\SR185378\\OneDrive - NCR Corporation\\Documents\\GitHub\\NCR-EmployeeReg\\EmployeeAss\\EmployeeAss\\EmployeeAss.csproj",
       "projectName": "EmployeeAss",
-      "projectPath": "C:\\Users\\SR185378\\source\\repos\\EmployeeAss\\EmployeeAss\\EmployeeAss.csproj",
+      "projectPath": "C:\\Users\\SR185378\\OneDrive - NCR Corporation\\Documents\\GitHub\\NCR-EmployeeReg\\EmployeeAss\\EmployeeAss\\EmployeeAss.csproj",
       "packagesPath": "C:\\Users\\SR185378\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SR185378\\source\\repos\\EmployeeAss\\EmployeeAss\\obj\\",
+      "outputPath": "C:\\Users\\SR185378\\OneDrive - NCR Corporation\\Documents\\GitHub\\NCR-EmployeeReg\\EmployeeAss\\EmployeeAss\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SR185378\\AppData\\Roaming\\NuGet\\NuGet.Config",

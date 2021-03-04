@@ -4,7 +4,7 @@ import {Table,Image} from 'react-bootstrap';
 import {Button,ButtonToolbar} from 'react-bootstrap';
 import {AddEmpModal} from './AddEmpModal';
 import {EditEmpModal} from './EditEmpModal';
-import EmpJSON from './EmployeeJSON.json';
+
 import './Emp.css';
 
 export class Employee extends Component{

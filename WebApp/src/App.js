@@ -1,7 +1,5 @@
 // import logo from './logo.svg';
 import './App.css';
-
-import {Home} from './Home';
 import {Employee} from './Employee';
 import {Navigation} from './Navigation';
 
@@ -18,8 +16,8 @@ function App() {
      <Navigation/>
 
      <Switch>
-       <Route path='/' component={Home} exact/>
-       <Route path='/employee' component={Employee}/>
+       
+       <Route path='/' component={Employee}/>
      </Switch>
     </div>
     </BrowserRouter>
