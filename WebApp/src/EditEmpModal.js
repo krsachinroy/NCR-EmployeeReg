@@ -49,7 +49,6 @@ export class EditEmpModal extends Component{
         })
         .then(res=>res.json())
         .then((result)=>{
-            EmpJSON.ImageURL=null;
             alert(result);
         },
         (error)=>{
@@ -57,7 +56,8 @@ export class EditEmpModal extends Component{
         })
     }
     
-    handleFileSelected(event){
+    handleFileSelected(event)
+    {
         event.preventDefault();
         this.photofilename=event.target.files[0].name;
         const formData = new FormData();
@@ -66,18 +66,17 @@ export class EditEmpModal extends Component{
             event.target.files[0],
             event.target.files[0].name
         );
-
         fetch(process.env.REACT_APP_API+'Employee/SaveFile',{
             method:'Put',
             body:formData
         })
         .then(res=>res.json())
         .then((result)=>{
-        this.imagesrc=process.env.REACT_APP_PHOTOPATH+result;
-        EmpJSON.ImageURL=this.imagesrc;
+            this.imagesrc=process.env.REACT_APP_PHOTOPATH+result;
+            EmpJSON.ImageURL=this.imagesrc;
         },
         (error)=>{
-        alert('Failed');
+            alert('Failed');
         })
     }
 
@@ -130,7 +129,7 @@ export class EditEmpModal extends Component{
                                 <Button variant="primary" type="submit" onClick={this.handleSubmit}>
                                     Update Employee
                                 </Button>
-                                </Form.Group>
+                        </Form.Group>
                     </Row>
                 </Modal.Body>
 <Modal.Footer>

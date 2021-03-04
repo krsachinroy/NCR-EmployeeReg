@@ -215,16 +215,11 @@ class FormCust extends Component {
           EmpJSON.City = this.state.city;
           EmpJSON.State = this.state.state;
           EmpJSON.Country = this.state.country;
-          EmpJSON.ImageURL = null;
-        }
-        handleLoad()
-        {
-            EmpJSON.ImageURL = null;
         }
   render () {
     return (
         
-        <Form onLoad={this.handleLoad}>
+        <Form>
             <FormErrors className= "error" style={{color:"red"}} formErrors={this.state.formErrors} />
             <Form.Group controlId="quick">
                 <Form.Label>QuickLook ID</Form.Label>
