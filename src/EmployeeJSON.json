@@ -1,0 +1,12 @@
+{
+                "EmployeeID" : null,
+                "QuickLookId" : null,
+                "FirstName" : null,
+                "LastName" : null,
+                "PhoneNumber" : null,
+                "Address" : null,
+                "City" : null,
+                "State" : null,
+                "Country" : null,
+                "ImageURL" : null
+}
