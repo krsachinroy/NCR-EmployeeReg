@@ -1,8 +1,8 @@
 create table dbo.Employee (
-QuickLookId varchar(10),
-FirstName varchar(10),
-LastName varchar(10),
-PhoneNumber numeric(10),
+QuickLookId varchar(10) not null,
+FirstName varchar(10) not null,
+LastName varchar(10) not null,
+PhoneNumber numeric(10) not null,
 Address varchar(50),
 City varchar(10),
 State varchar(10),
