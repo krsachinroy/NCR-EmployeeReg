@@ -31,6 +31,7 @@ class FormCust extends Component {
             state: '',
             country: '',
             imageURL:''},
+            saveEnable:false,
       IdValid: true,
       quickValid: false,
       firstValid: false,
@@ -83,7 +84,7 @@ class FormCust extends Component {
         case 'quick':
             var re1 = /^[a-zA-Z0-9]+$/;
             quickValid=false;
-            if(fieldValue.length===10 && re1.test(fieldValue))
+            if(fieldValue!=null && fieldValue.length===10 && re1.test(fieldValue))
             quickValid=true;
             fieldValidationErrors.quick = quickValid ? '': ' is invalid. Please enter correct QLID';
         break;
@@ -160,17 +161,19 @@ class FormCust extends Component {
   }
 
   validateForm() {
-    this.setState({formValid:
-        this.state.IdValid
-        && this.state.quickValid
+    if(
+        this.state.quickValid
         &&  this.state.firstValid
-        && this.state.lastValid
-        && this.state.phoneValid
+         && this.state.lastValid
+         && this.state.phoneValid
         && this.state.addressValid
-        && this.state.cityValid
-        &&  this.state.stateValid
-        && this.state.countryValid
-        && this.state.imageValid});
+         && this.state.cityValid
+         &&  this.state.stateValid
+        && this.state.countryValid)
+        {
+            this.setState({formValid:true,saveEnable:true});
+            
+        }
   }
 
   errorClass(error) {
@@ -215,8 +218,11 @@ class FormCust extends Component {
           EmpJSON.City = this.state.city;
           EmpJSON.State = this.state.state;
           EmpJSON.Country = this.state.country;
+          EmpJSON.saveClick=true;
+          this.setState({saveEnable:false})
         }
   render () {
+      
     return (
         
         <Form>
@@ -277,7 +283,7 @@ class FormCust extends Component {
                 onChange={this.handleUserInput}/>
             </Form.Group>
             <Form.Group>
-                <Button variant="primary" onClick={(e)=>this.handleSubmit(e)}>Save</Button>
+                <Button variant="primary" onClick={(e)=>this.handleSubmit(e)} disabled={!this.state.saveEnable}>Save</Button>
             </Form.Group>
         </Form>
         

@@ -22,7 +22,6 @@ export class EditEmpModal extends Component{
 }
     
 
-
     photofilename = "anonymous.png";
     imagesrc = process.env.REACT_APP_PHOTOPATH+this.photofilename;
 
@@ -49,7 +48,19 @@ export class EditEmpModal extends Component{
         })
         .then(res=>res.json())
         .then((result)=>{
-            alert(result);
+               EmpJSON.EmployeeID = null;
+               EmpJSON.QuickLookId = null;
+               EmpJSON.FirstName= null;
+               EmpJSON.LastName = null;
+               EmpJSON.PhoneNumber = null;
+               EmpJSON.Address = null;
+               EmpJSON.City = null;
+               EmpJSON.State = null;
+               EmpJSON.Country = null;
+               //EmpJSON.ImageURL = null;
+               EmpJSON.saveClick= false;
+            //    this.imagesrc=null;
+                alert(result);
         },
         (error)=>{
             alert('Failed');
@@ -121,12 +132,11 @@ export class EditEmpModal extends Component{
                         </Col>
 
                         <Col sm={6}>
-                            <Image width="200px" height="200px"
-                            src={process.env.REACT_APP_PHOTOPATH+this.props.photofilename}/>
+                            <Image width="200px" height="200px" src={this.state.imageURL}/>
                             <input onChange={this.handleFileSelected} type="File"/>
                         </Col>
                         <Form.Group>
-                                <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+                                <Button variant="primary" type="submit" onClick={this.handleSubmit} disabled={!EmpJSON.saveClick}>
                                     Update Employee
                                 </Button>
                         </Form.Group>

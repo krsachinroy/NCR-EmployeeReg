@@ -64,8 +64,19 @@ export class AddEmpModal extends Component{
         })
         .then(res=>res.json())
         .then((result)=>{
-            
-            alert(result);
+               EmpJSON.EmployeeID = null;
+               EmpJSON.QuickLookId = null;
+               EmpJSON.FirstName= null;
+               EmpJSON.LastName = null;
+               EmpJSON.PhoneNumber = null;
+               EmpJSON.Address = null;
+               EmpJSON.City = null;
+               EmpJSON.State = null;
+               EmpJSON.Country = null;
+               EmpJSON.ImageURL = null;
+               EmpJSON.saveClick= false;
+               this.imagesrc=null;
+                alert(result);
         },
         (error)=>{
             alert('Failed');
@@ -76,6 +87,9 @@ export class AddEmpModal extends Component{
     handleFileSelected(event){
         event.preventDefault();
         this.photofilename=event.target.files[0].name;
+        var Photo = this.photofilename.toString();
+        var sub = Photo.substring(Photo.indexOf('.')+1,Photo.length);
+        if(sub.toLowerCase() === 'png' || sub.toLowerCase() === 'jpeg' || sub.toLowerCase() === 'jpg'){
         const formData = new FormData();
         formData.append(
             "myFile",
@@ -94,7 +108,13 @@ export class AddEmpModal extends Component{
         },
         (error)=>{
             alert('Failed');
-        })
+        })}
+        else
+        {
+           
+            alert("Please Upload proper Image in png/jpeg/jpg format");
+            this.photofilename=null;
+        }
         
     }
 
@@ -127,7 +147,7 @@ export class AddEmpModal extends Component{
                 <input onChange={this.handleFileSelected} type="File"/>
             </Col> 
             <Form.Group>
-                <Button variant="primary" type="submit" onClick={this.handleSubmit}>Add Employee</Button>
+                <Button variant="primary" type="submit" onClick={this.handleSubmit} disabled={!EmpJSON.saveClick}>Add Employee</Button>
             </Form.Group>
         </Row>
     </Modal.Body>

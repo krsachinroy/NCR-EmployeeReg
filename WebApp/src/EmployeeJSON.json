@@ -8,5 +8,6 @@
                 "City" : null,
                 "State" : null,
                 "Country" : null,
-                "ImageURL" : null
+                "ImageURL" : null,
+                "saveClick": false
 }
