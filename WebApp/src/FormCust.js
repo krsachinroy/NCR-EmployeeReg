@@ -165,11 +165,11 @@ class FormCust extends Component {
         this.state.quickValid
         &&  this.state.firstValid
          && this.state.lastValid
-         && this.state.phoneValid
-        && this.state.addressValid
-         && this.state.cityValid
-         &&  this.state.stateValid
-        && this.state.countryValid)
+         && this.state.phoneValid)
+        // && this.state.addressValid
+        //  && this.state.cityValid
+        //  &&  this.state.stateValid
+        // && this.state.countryValid)
         {
             this.setState({formValid:true,saveEnable:true});
             

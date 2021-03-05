@@ -69,13 +69,20 @@ namespace EmployeeAss.Controllers
             using (SqlConnection myConnection = new SqlConnection(sqlConnection))
             {
                 myConnection.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myConnection))
+                try
                 {
-                    MyReader = myCommand.ExecuteReader();
-                    table.Load(MyReader); ;
+                    using (SqlCommand myCommand = new SqlCommand(query, myConnection))
+                    {
+                        MyReader = myCommand.ExecuteReader();
+                        table.Load(MyReader); ;
 
-                    MyReader.Close();
-                    myConnection.Close();
+                        MyReader.Close();
+                        myConnection.Close();
+                    }
+                }
+                catch(Exception)
+                {
+                    return new JsonResult("Please fill Correct details.");
                 }
             }
 
